@@ -819,7 +819,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rmbgsticker":
         await removebg_sticker(client, query.message)
     elif query.data == "pages":
-        await query.answer("🤨 Curiosity is a little more, isn't it? 😁", show_alert=True)
+        await query.answer("", show_alert=True)
     elif query.data == "start":                        
         buttons = [[
             InlineKeyboardButton("🎉 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀 🎉", url=f"http://t.me/{temp.U_NAME}?startgroup=start")
@@ -1343,7 +1343,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap =f"<b><i>🎬 Tɪᴛʟᴇ: {search}/n📁 Fɪʟᴇs: {total_results}/n🎧 Aᴜᴅɪᴏ: ᴍᴜʟᴛɪ/n/n👤 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ {message.from_user}/n💭 Gʀᴏᴜᴘ: {message.chat.title}</i></b>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
