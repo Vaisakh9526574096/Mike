@@ -63,17 +63,17 @@ async def g_fil_mod(client, message):
       try: 
          args = message.text.split(None, 1)[1].lower() 
       except: 
-         return await message.reply("**𝙸𝙽𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴 𝙲𝙾𝙼𝙼𝙰𝙽𝙳...**")
+         return await message.reply("**Command Incomplete!**")
       
       m = await message.reply("**𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../**")
 
       if args in mode_on:
           G_MODE[str(message.chat.id)] = "True" 
-          await m.edit("**𝙶𝙻𝙾𝙱𝙰𝙻 𝙴𝙽𝙰𝙱𝙻𝙴𝙳**")
+          await m.edit("**Global Filter Enabled**")
       
       elif args in mode_of:
           G_MODE[str(message.chat.id)] = "False"
-          await m.edit("**𝙶𝙻𝙾𝙱𝙰𝙻 𝙳𝙸𝚂𝙰𝙱𝙻𝙴𝙳**")
+          await m.edit("**Global filter disabled**")
       else:
           await m.edit("𝚄𝚂𝙴 :- /g_filter on 𝙾𝚁 /g_filter off")
 
@@ -347,7 +347,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("Buddy Don't Touch Others Property 😁", show_alert=True)
+                await query.answer("𝐓𝐡𝐢𝐬 𝐢𝐬 𝐧𝐨𝐭 𝐟𝐨𝐫 𝐘𝐨𝐮!", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -367,16 +367,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton(f"{stat}", callback_data=f"{cb}:{group_id}"),
-             InlineKeyboardButton("𝙳𝙴𝙻𝙴𝚃𝙴", callback_data=f"deletecb:{group_id}")],
-            [InlineKeyboardButton("𝙱𝙰𝙲𝙺", callback_data="backcb")]
+             InlineKeyboardButton("Delete", callback_data=f"deletecb:{group_id}")],
+            [InlineKeyboardButton("« Back", callback_data="backcb")]
         ])
 
         await query.message.edit_text(
-            f"𝙶𝚁𝙾𝚄𝙿 𝙽𝙰𝙼𝙴 :- **{title}**\n𝙶𝚁𝙾𝚄𝙿 𝙸𝙳 :- `{group_id}`",
+            f"Group Name: {title}\nGroup ID:- `{group_id}`",
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+        return await query.answer('')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -396,8 +396,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode=enums.ParseMode.MARKDOWN,
             )
         else:
-            await query.message.edit_text('Some error occurred!!', parse_mode="md")
-        return await query.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+            await query.message.edit_text('Sorry Some error occurred!!', parse_mode="md")
+        return await query.answer('')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -438,7 +438,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+        return await query.answer('')
     elif query.data == "backcb":
         await query.answer()
 
@@ -449,7 +449,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+            return await query.answer('')
         buttons = []
         for groupid in groupids:
             try:
@@ -511,7 +511,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     protect_content=True if ident == "pmfilep" else False                    
                 )                        
         except Exception as e:
-            await query.answer(f"⚠️ Error {e}", show_alert=True)
+            await query.answer(f"Error {e}", show_alert=True)
         
     if query.data.startswith("file"):        
         ident, req, file_id = query.data.split("#")
@@ -551,7 +551,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
-            await query.answer('Unblock the bot mahn !', show_alert=True)
+            await query.answer('𝐑𝐞𝐬𝐭𝐚𝐫𝐭 𝐁𝐨𝐭.', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
