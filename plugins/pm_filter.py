@@ -874,11 +874,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('ᴍᴀɴᴜᴀʟ', callback_data='manuelfilter'),
             InlineKeyboardButton('ᴀᴜᴛᴏ', callback_data='autofilter'),
-            InlineKeyboardButton('ʙᴀᴛᴄʜ', callback_data='coct')
+            InlineKeyboardButton('ʙᴀᴛᴄʜ', callback_data='newdata')
             ],[                       
             InlineKeyboardButton('ᴄᴀʀʙᴏɴ', callback_data='carb'),
             InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
-            InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='newdata')
+            InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct')
             ],[           
             InlineKeyboardButton('ᴊsᴏɴ', callback_data='son'),
             InlineKeyboardButton('sʜᴀʀᴇ ᴛᴇxᴛ', callback_data='sharetxt'),           
