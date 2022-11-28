@@ -38,13 +38,15 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention, message.from_user.username, temp.U_NAME))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton("➕️ 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 ➕️", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+            InlineKeyboardButton("🎉 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀 🎉", url=f"http://t.me/{temp.U_NAME}?startgroup=start")
             ],[
-            InlineKeyboardButton("🔍 𝚂𝙴𝙰𝚁𝙲𝙷 🔍", switch_inline_query_current_chat=''), 
-            InlineKeyboardButton("📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢", url="https://t.me/mkn_bots_updates")
+            InlineKeyboardButton("", switch_inline_query_current_chat=''), 
+            InlineKeyboardButton("", url="https://t.me/ddrabit/19")
+            ],[
+            InlineKeyboardButton("", url="t.me/dmca")
             ],[      
-            InlineKeyboardButton("ℹ️ 𝙷𝙴𝙻𝙿 ℹ️", callback_data="help"),
-            InlineKeyboardButton("💫 𝙰𝙱𝙾𝚄𝚃 💫", callback_data="about")
+            InlineKeyboardButton("🛠️ ʜᴇʟᴘ", callback_data="help"),
+            InlineKeyboardButton("🛡️ ᴀʙᴏᴜᴛ", callback_data="about")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_chat_action(enums.ChatAction.TYPING)
@@ -88,13 +90,15 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton("", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+            InlineKeyboardButton("🎉 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀 🎉", url=f"http://t.me/{temp.U_NAME}?startgroup=start")
             ],[
-            InlineKeyboardButton("🔍 𝚂𝙴𝙰𝚁𝙲𝙷 🔍", switch_inline_query_current_chat=''), 
-            InlineKeyboardButton("📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢", url="https://t.me/mkn_bots_updates")
+            InlineKeyboardButton("", switch_inline_query_current_chat=''), 
+            InlineKeyboardButton("", url="https://t.me/ddrabit/19")
+            ],[
+            InlineKeyboardButton("", url="t.me/dmca")
             ],[      
-            InlineKeyboardButton("ℹ️ 𝙷𝙴𝙻𝙿 ℹ️", callback_data="help"),
-            InlineKeyboardButton("💫 𝙰𝙱𝙾𝚄𝚃 💫", callback_data="about")
+            InlineKeyboardButton("🛠️ ʜᴇʟᴘ", callback_data="help"),
+            InlineKeyboardButton("🛡️ ᴀʙᴏᴜᴛ", callback_data="about")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_chat_action(enums.ChatAction.TYPING)
@@ -520,7 +524,7 @@ async def save_template(client, message):
         return
 
     if len(message.command) < 2:
-        return await sts.edit("No Input!!")
+        return await sts.edit("No Input!")
     template = message.text.split(" ", 1)[1]
     await save_group_settings(grp_id, 'template', template)
     await sts.edit(f"Successfully changed template for {title} to\n\n{template}")
@@ -540,13 +544,13 @@ async def send_msg(bot, message):
             await message.reply_to_message.copy(int(user.id))
             success = True
         except Exception as e:
-            await message.reply_text(f"<b>Eʀʀᴏʀ :- <code>{e}</code></b>")
+            await message.reply_text(f"error <code>{e}</code>")
         if success:
-            await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴇssғᴜʟʟʏ Sᴇɴᴅ To {user.mention}.</b>")
+            await message.reply_text(f"<b>Your message has been send to {user.mention}.</b>")
         else:
-            await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀʀᴇᴅ !</b>")
+            await message.reply_text("an error occured")
     else:
-        await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
+        await message.reply_text("Incomplete command!")
 
 @Client.on_message(filters.command("gsend") & filters.user(ADMINS))
 async def send_chatmsg(bot, message):
