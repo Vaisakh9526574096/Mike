@@ -48,16 +48,12 @@ async def start(client, message):
             InlineKeyboardButton("🛠️ ʜᴇʟᴘ", callback_data="help"),
             InlineKeyboardButton("🛡️ ᴀʙᴏᴜᴛ", callback_data="about")
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_chat_action(enums.ChatAction.TYPING)
-        m=await message.reply_sticker("CAACAgUAAxkBAAIFNGJSlfOErbkSeLt9SnOniU-58UUBAAKaAAPIlGQULGXh4VzvJWoeBA")
-        await asyncio.sleep(1)
-        await m.delete()
+        reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=START_MESSAGE.format(user=message.from_user.mention, bot=temp.B_LINK),
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
