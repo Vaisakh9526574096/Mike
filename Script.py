@@ -4,9 +4,15 @@ class script(object):
 𝖨𝗆 𝖺𝗇 𝖺𝗎𝗍𝗈 𝖿𝗂𝗅𝗍𝖾𝗋 𝖻𝗈𝗍 𝗐𝗁𝗂𝖼𝗁 𝖼𝖺𝗇 𝗉𝗋𝗈𝗏𝗂𝖽𝖾 𝗆𝗈𝗏𝗂𝖾𝗌 𝗂𝗇 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉𝗌. 𝖠𝖽𝖽 𝖬𝖾 𝖳𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 𝖺𝗇𝖽 𝗉𝗋𝗈𝗆𝗈𝗍𝖾 𝗆𝖾 𝖺𝗌 𝖺𝖽𝗆𝗂𝗇 𝗍𝗈 𝗅𝖾𝗍 𝗆𝖾 𝗀𝖾𝗍 𝗂𝗇 𝖺𝖼𝗍𝗂𝗈𝗇.
 
 𝖢𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝖧𝖾𝗅𝗉 𝖻𝗎𝗍𝗍𝗈𝗇 𝖿𝗈𝗋 𝖬𝗈𝗋𝖾..."""
-    HELP_TXT = """<b>Welcome To My Help Module.</b>"""
-    ONE_TXT = """<b>Welcome To My Help Module #2</b>"""
-    TWO_TXT = """<b>Welcome To My Help Module #3</b>"""
+    HELP_TXT = """</b>⚠️ Not Ready Yet!</b>"""
+    ONE_TXT = """
+
+
+"""
+    TWO_TXT = """
+
+
+"""
     ABOUT_TXT = """<b>○ My Name: Michael Jackson
 ○ Creator: <a href=https://t.me/ddrabit/19>LᴀL</a>
 ○ Language: Phython3
