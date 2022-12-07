@@ -26,11 +26,50 @@ class script(object):
 <b>• ᴅᴀᴛᴀʙᴀsᴇ: ᴍᴏɴɢᴏ ᴅʙ</b>
 <b>• ʙᴏᴛ sᴇʀᴠᴇʀ: ʜᴇʀᴏᴋᴜ</b>
 <b></b>"""
+
+    BATCH_TXT = """ 
+<b>BATCH</b>
+
+You can use the filestore feature for any public channel without bot being admin in that channel (only media messages  can be stored). 
+
+</b>Commands & Usage:</b>
+
+1. For a single file use /link command as reply to file.(only video, audio and documents are supported for now.)
+
+2. For creating batch files , use /batch </code><starting message link> <ending message link>.</code>
+Example: </code/batch https://t.me/teamEvaMaria/2</code> </code>https://t.me/teamEvaMaria/9</code>
+
+"""
+CARB_TXT = """
+
+<b>CARBON</b>
+
+/carbon - <code>reply to a text for carbon image.</code>
+ """
+SHARE_TXT = """
+<b>SHARE TEXT</b>
+
+This feature helps you to get your text into sharable link. 
+
+/share - <code>Reply to a text to generate sharable link.</code>
+ """
+IMDB_TXT = """
+<b>IMDB</b>
+
+Search IMDB results and customize IMDB Template. You can customize them as per your needs.
+
+<b>Comands & Usage:</b>
+
+/imdb  - <code>get the film information from IMDb source.</code>
+/set_template - <code>To set Custom template for your group.</code>
+
+<a href=https://t.me/TeamEvamaria/9>Know More....</a>"""
+
+
     FILE_TXT = """<b>Commands and Usage.</b>
 
 /autofilter on - Enable auto filter.
-/autofilter off - Disable auto filter.
-/set_template - Set custom ɪᴍᴅʙ template."""
+/autofilter off - Disable auto filter."""
     WHOIS_TXT ="""<b>Commands and Usage</b>
 
 /whois - For user details"""
