@@ -40,20 +40,22 @@ You can use the filestore feature for any public channel without bot being admin
 Example: </code/batch https://t.me/teamEvaMaria/2</code> </code>https://t.me/teamEvaMaria/9</code>
 
 """
-CARB_TXT = """
+    CARB_TXT = """
 
 <b>CARBON</b>
 
 /carbon - <code>reply to a text for carbon image.</code>
  """
-SHARE_TXT = """
+
+    SHARE_TXT = """
 <b>SHARE TEXT</b>
 
 This feature helps you to get your text into sharable link. 
 
 /share - <code>Reply to a text to generate sharable link.</code>
  """
-IMDB_TXT = """
+
+    IMDB_TXT = """
 <b>IMDB</b>
 
 Search IMDB results and customize IMDB Template. You can customize them as per your needs.
@@ -70,6 +72,7 @@ Search IMDB results and customize IMDB Template. You can customize them as per y
 
 /autofilter on - Enable auto filter.
 /autofilter off - Disable auto filter."""
+
     WHOIS_TXT ="""<b>Commands and Usage</b>
 
 /whois - For user details"""
