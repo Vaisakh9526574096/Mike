@@ -5,8 +5,11 @@ class script(object):
 
 𝖢𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝖧𝖾𝗅𝗉 𝖻𝗎𝗍𝗍𝗈𝗇 𝖿𝗈𝗋 𝖬𝗈𝗋𝖾..."""
     HELP_TXT = """<b>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ʜᴇʟᴘ ᴍᴇɴᴜ. ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ sᴇᴇ ᴜsᴀɢᴇs ᴏꜰ sᴘᴇᴄꜰɪᴄ ᴍᴏᴅᴜʟᴇs.</b>"""
-    ONE_TXT = """
+    FILE_TXT = """
+<b>Commands and Usage.</b>
 
+/autofilter on - Enable auto filter.
+/autofilter off - Disable auto filter.
 
 """
     TWO_TXT = """
@@ -68,10 +71,10 @@ Search IMDB results and customize IMDB Template. You can customize them as per y
 <a href=https://t.me/TeamEvamaria/9>Know More....</a>"""
 
 
-    FILE_TXT = """<b>Commands and Usage.</b>
+    FLX_TXT = """<b>Commands and Usage.</b>
 
 /autofilter on - Enable auto filter.
-/autofilter off - Disable auto filter."""
+/autofilter off - Disable auto filter. """
 
     WHOIS_TXT ="""<b>Commands and Usage</b>
 
