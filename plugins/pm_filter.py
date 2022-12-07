@@ -310,7 +310,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+                    return await query.answer('')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
@@ -874,14 +874,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('ᴍᴀɴᴜᴀʟ', callback_data='manuelfilter'),
             InlineKeyboardButton('ᴀᴜᴛᴏ', callback_data='autofilter'),
-            InlineKeyboardButton('ʙᴀᴛᴄʜ', callback_data='newdata')
+            InlineKeyboardButton('ʙᴀᴛᴄʜ', callback_data='filestorex')
             ],[                       
-            InlineKeyboardButton('ᴄᴀʀʙᴏɴ', callback_data='carb'),
+            InlineKeyboardButton('ᴄᴀʀʙᴏɴ', callback_data='carbonx'),
             InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
             InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct')
             ],[           
             InlineKeyboardButton('ᴊsᴏɴ', callback_data='son'),
-            InlineKeyboardButton('sʜᴀʀᴇ ᴛᴇxᴛ', callback_data='sharetxt'),           
+            InlineKeyboardButton('sʜᴀʀᴇ ᴛᴇxᴛ', callback_data='sharetextx'),           
             InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges')
             ],[
             InlineKeyboardButton('ᴘᴀsᴛᴇʀ', callback_data='pastes'),
@@ -955,7 +955,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )  
-    elif query.data == "sharetxt":
+    elif query.data == "sharetextx":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help')
         ]]
@@ -1058,6 +1058,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "admin":
+        buttons = [[
+            InlineKeyboardButton('« Back', callback_data='help'),
+            InlineKeyboardButton('', callback_data='button')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.ADMIN_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "button":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='manuelfilter')
@@ -1099,16 +1110,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "admin":
+    elif query.data == "adminz":
         buttons = [[
-            InlineKeyboardButton('Global Filter', callback_data='gfill'),
-            InlineKeyboardButton('User & Chat', callback_data='uschat')
+            InlineKeyboardButton('', callback_data='gfill'),
+            InlineKeyboardButton('', callback_data='uschat')
             ],[
             InlineKeyboardButton('« Back', callback_data='extra')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if query.from_user.id in ADMINS:
-            await query.message.edit_text(text=script.ADMIN_TXT, reply_markup=reply_markup, parse_mode=enums.ParseMode.HTML)
+            await query.message.edit_text(text=script.ADMIZ_TXT, reply_markup=reply_markup, parse_mode=enums.ParseMode.HTML)
         else:
             await query.answer("Your Not Authorizer ⚠️", show_alert=True)
 
@@ -1126,7 +1137,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)        
         await query.message.edit_text(text=script.US_CHAT_TXT, reply_markup=reply_markup, parse_mode=enums.ParseMode.HTML)
         
-    elif query.data == "carb":
+    elif query.data == "carbonx":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help')
         ]]
@@ -1146,7 +1157,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )       
-    elif query.data == "newdata":
+    elif query.data == "filestorex":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help')
         ]]
@@ -1343,7 +1354,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap =f"<b><i>🎬 Tɪᴛʟᴇ: {search}/n📁 Fɪʟᴇs: {total_results}/n🎧 Aᴜᴅɪᴏ: ᴍᴜʟᴛɪ/n/n👤 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ {message.from_user}/n💭 Gʀᴏᴜᴘ: {message.chat.title}</i></b>"
+        cap =f"<b><i>🎬 Tɪᴛʟᴇ: {search}/n📁 Fɪʟᴇs: {total_results}/n🎧 Aᴜᴅɪᴏ: ᴍᴜʟᴛɪ/n/n👤 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ {message.from_user.mention}/n💭 Gʀᴏᴜᴘ: {message.chat.title}</i></b>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -1439,7 +1450,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             **locals()
         )
     else:
-        cap =f"<b><i>🎬 Tɪᴛʟᴇ: {search}/n📁 Fɪʟᴇs: {total_results}/n🎧 Aᴜᴅɪᴏ: ᴍᴜʟᴛɪ/n/n👤 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ {message.from_user}/n💭 Gʀᴏᴜᴘ: {message.chat.title}</i></b>"
+        cap =f"<b><i>🎬 Tɪᴛʟᴇ: {search}/n📁 Fɪʟᴇs: {total_results}/n🎧 Aᴜᴅɪᴏ: ᴍᴜʟᴛɪ/n/n👤 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ {message.from_user.mention}/n💭 Gʀᴏᴜᴘ: {message.chat.title}</i></b>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -1636,7 +1647,7 @@ async def global_filters(client, message, text=False):
                                 disable_web_page_preview=True,
                                 reply_to_message_id=reply_id
                             )
-                            await asyncio.sleep(IMDB_DELET_TIME)
+                            await asyncio.sleep(0)
                             await knd3.delete()
                             await message.delete()
 
@@ -1649,7 +1660,7 @@ async def global_filters(client, message, text=False):
                                 reply_markup=InlineKeyboardMarkup(button),
                                 reply_to_message_id=reply_id
                             )
-                            await asyncio.sleep(IMDB_DELET_TIME)
+                            await asyncio.sleep(0)
                             await knd2.delete()
                             await message.delete()
 
@@ -1660,7 +1671,7 @@ async def global_filters(client, message, text=False):
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
                         )
-                        await asyncio.sleep(IMDB_DELET_TIME)
+                        await asyncio.sleep(0)
                         await knd1.delete()
                         await message.delete()
 
@@ -1672,7 +1683,7 @@ async def global_filters(client, message, text=False):
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
-                        await asyncio.sleep(IMDB_DELET_TIME)
+                        await asyncio.sleep(0)
                         await knd.delete()
                         await message.delete()
 
