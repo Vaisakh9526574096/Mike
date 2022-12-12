@@ -822,16 +822,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("", show_alert=True)
     elif query.data == "start":                        
         buttons = [[
-            InlineKeyboardButton("🎉 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀 🎉", url=f"http://t.me/{temp.U_NAME}?startgroup=start")
-            ],[
-            InlineKeyboardButton("", switch_inline_query_current_chat=''), 
-            InlineKeyboardButton("", url="https://t.me/ddrabit/19")
-            ],[
-            InlineKeyboardButton("", url="t.me/dmca")
-            ],[      
-            InlineKeyboardButton("🛠️ ʜᴇʟᴘ", callback_data="help"),
-            InlineKeyboardButton("🛡️ ᴀʙᴏᴜᴛ", callback_data="about")
-        ]]
+                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/proautofilter_bot?startgroup=true')
+                ],[
+                    InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴',  url='https://t.me/alanwalker_tg'),
+                    InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/MOVIEROCKERS_GROUP')
+                ],[
+                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+                ],[
+                    InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/MOVIE_ROCKERS_MR')
+                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=START_MESSAGE.format(user=query.from_user.mention, bot=temp.B_LINK),
@@ -923,7 +923,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('', url='https://github.com/MrMKN/PROFESSOR-BOT')
+            InlineKeyboardButton('', url='https://t.me/Premium_Bot_Maker')
             ],[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='about')
         ]]
